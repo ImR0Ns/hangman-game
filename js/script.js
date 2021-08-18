@@ -13,12 +13,15 @@ $(document).ready(function(){
     var white = secretWordToWhite(secretWord); // white spaces
     $(".secretWord").text(white);
     var forCheck = secretWord.toLowerCase().split(""); 
+    var wordsUsed = [forCheck[0], forCheck[forCheck.length - 1]], mistakes = 0;
     $("input").on("keydown",function search(e) {
         if(e.keyCode == 13) {
             var userInput = $(this).val();
             if(forCheck.join("") == white.toLowerCase()){
                 alert("You won!");
                 location.reload(); // restart game;
+            }else if(wordsUsed.includes(userInput)){
+                alert("The character has already been used!");
             } else if(forCheck.includes(userInput)) {
                 var splitTwo = white.split("");
                 for(var i in forCheck){
@@ -26,8 +29,17 @@ $(document).ready(function(){
                        splitTwo[i] = userInput; 
                     }
                 }
+                wordsUsed.push(userInput);
                 white = splitTwo.join("");
                 $(".secretWord").text(white);
+            } else {
+                if(mistakes > 4){
+                    alert("You lose!");
+                    location.reload(); // restart game;
+                } else {
+                    mistakes += 1;
+                    $(".mistakes").text("Mistakes: " + mistakes);
+                }
             }
         }
     });
