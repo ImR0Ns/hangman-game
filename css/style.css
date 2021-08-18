@@ -1,0 +1,37 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: white;
+}
+input:focus {
+    outline: none;
+}
+header {
+    background-color: #8ee4af;
+    border-bottom: 2px solid #05386b;
+    padding: 25px 0px 5px 0px;
+}
+header h1 {
+    font-weight: 600;
+}
+.secretWord {
+    font-size: 30px;
+    letter-spacing: 50px;
+    text-transform: uppercase;
+}
+.subTitle {
+    font-size: 25px;
+}
+.mistakes {
+    font-size: 25px;
+    margin: 100px 0px 0px 0px;
+}
+#userInput::placeholder {
+    text-transform: lowercase;
+}
+#userInput {
+    text-transform: uppercase;
+    border: none;
+    border-bottom: 1px solid black;
+}
