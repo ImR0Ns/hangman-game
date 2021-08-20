@@ -1,6 +1,8 @@
 // alert(); (test)
 
-var secretWord = "secret"; // change secret word
+var random_words = ["tare", "rau", "mic", "secret", "musculos", "tractor"];
+
+var secretWord = random_words[Math.floor(Math.random() * random_words.length)]; // change secret word
 function secretWordToWhite(word){
     var whiteSpaces = "";
     var start = word[0], end = word[word.length - 1];
@@ -50,22 +52,22 @@ $(document).ready(function(){
                     $(".mistakes").text("Mistakes: " + mistakes);
                     switch (mistakes) {
                         case 1:
-                            $("#mist").attr("src","/imgs/1mist.png");
+                            $("#mist").attr("src","./imgs/1mist.png");
                             break;
                         case 2:
-                            $("#mist").attr("src","/imgs/2mist.png");
+                            $("#mist").attr("src","./imgs/2mist.png");
                             break;
                         case 3:
-                            $("#mist").attr("src","/imgs/3mist.png");
+                            $("#mist").attr("src","./imgs/3mist.png");
                             break;
                         case 4:
-                            $("#mist").attr("src","/imgs/4mist.png");
+                            $("#mist").attr("src","./imgs/4mist.png");
                             break;
                         case 5:
-                            $("#mist").attr("src","/imgs/5mist.png");
+                            $("#mist").attr("src","./imgs/5mist.png");
                             break;
                         case 6:
-                            $("#mist").attr("src","/imgs/6mist.png");
+                            $("#mist").attr("src","./imgs/6mist.png");
                             $(".mistakes").text("Last chance!");
                             break;
                     }
